@@ -58,19 +58,7 @@ app.get("/api/persons/:id", (request, response, next) => {
 //add
 app.post("/api/persons", (request, response, next) => {
 	const body = request.body;
-	/*
-	if (!body.name || body.name === "") {
-		return response.status(400).json({
-			error: "name is missing",
-		});
-	}
 
-	if (!body.number || body.number === "") {
-		return response.status(400).json({
-			error: "number is missing",
-		});
-	}
-	*/
 	Person.findOne({ name: body.name })
 		.then((foundPerson) => {
 			const person = new Person({
