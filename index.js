@@ -24,7 +24,7 @@ app.get("/", (request, response) => {
 	response.send("<h1>Hello World!</h1>");
 });
 //info
-app.get("/info", (request, response) => {
+app.get("/info", (request, response, next) => {
 	Person.find({})
 		.then((foundPersons) => {
 			response.send(

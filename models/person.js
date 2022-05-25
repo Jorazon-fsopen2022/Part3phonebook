@@ -13,7 +13,7 @@ mongoose
 		console.log("error connecting to MongoDB:", error.message);
 	});
 
-const phonenumber = /(?=.{8,})^\d{2,3}\-\d+$/gm;
+const phonenumber = /(?=.{8,})^\d{2,3}-\d+$/gm;
 
 const personSchema = new mongoose.Schema({
 	name: {
